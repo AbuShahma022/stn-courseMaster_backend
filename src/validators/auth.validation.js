@@ -7,11 +7,11 @@ const registerSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
   adminKey: z.string().optional(), // Optional admin registration key
-});
+}).strict();
 
 const loginSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
-});
+}).strict();
 
 module.exports = { registerSchema, loginSchema };
